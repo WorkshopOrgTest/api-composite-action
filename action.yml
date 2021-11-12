@@ -1,6 +1,9 @@
 name: 'File Copy'
 description: 'Pretends to copy some files and return the number of files copied'
 inputs:
+  Token:
+    description: 'GitHub API Token'
+    required: true
   Header: 
     description: 'Header to be added along with the request'
     required: true
@@ -17,5 +20,5 @@ runs:
   using: "composite"
   steps: 
     - run: |
-       ${{ github.action_path }}/apicalltest.ps1 -Header ${{ inputs.Header }} -RequestBody ${{ inputs.RequestBody }} -ExpectedOutput ${{ inputs.ExpectedOutput }}
+       ${{ github.action_path }}/apicalltest.ps1 -token ${{inputs.API_TOKEN}} -Header ${{ inputs.Header }} -RequestBody ${{ inputs.RequestBody }} -ExpectedOutput ${{ inputs.ExpectedOutput }}
       shell: pwsh
