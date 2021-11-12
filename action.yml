@@ -17,5 +17,5 @@ runs:
   using: "composite"
   steps: 
     - run: |
-       ./apicalltest.ps1 -Header ${{ inputs.Header }} -RequestBody ${{ inputs.RequestBody }} -ExpectedOutput ${{ inputs.ExpectedOutput }}
+       ${{ github.action_path }}/apicalltest.ps1 -Header ${{ inputs.Header }} -RequestBody ${{ inputs.RequestBody }} -ExpectedOutput ${{ inputs.ExpectedOutput }}
       shell: pwsh
