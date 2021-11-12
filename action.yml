@@ -17,4 +17,4 @@ runs:
   using: "composite"
   steps: 
     - run: |
-       ./apicalltest.ps1    
+       ./apicalltest.ps1 -Header ${{ inputs.Header }} -RequestBody ${{ inputs.RequestBody }} -ExpectedOutput ${{ inputs.ExpectedOutput }}
