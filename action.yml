@@ -18,3 +18,4 @@ runs:
   steps: 
     - run: |
        ./apicalltest.ps1 -Header ${{ inputs.Header }} -RequestBody ${{ inputs.RequestBody }} -ExpectedOutput ${{ inputs.ExpectedOutput }}
+      shell: pwsh
