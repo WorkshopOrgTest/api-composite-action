@@ -1,0 +1,22 @@
+name: 'File Copy'
+description: 'Pretends to copy some files and return the number of files copied'
+inputs:
+  Header: 
+    description: 'Header to be added along with the request'
+    required: true
+  RequestBody: 
+    description: 'Request Body for the api call'
+    required: true
+  ExpectedOutput:
+    description: 'Output to compare the api response with'
+    required: true
+outputs:
+  comparisonoutput:
+    description: 'Script to fail/Pass based on the api call script'
+runs:
+  using: "composite"
+  steps: 
+    - run: |
+       ./apicalltest.ps1 -token ${{secrets.API_TOKEN}} -Header ${{secrets.HEADER}} -RequestBody ${{secrets.REQUESTBODY}} -ExpectedOutput ${{secrets.EXPECTEDOUTPUT}}  
+        
+        
