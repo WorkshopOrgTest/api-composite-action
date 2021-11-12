@@ -1,5 +1,5 @@
-name: 'File Copy'
-description: 'Pretends to copy some files and return the number of files copied'
+name: 'Apicall action'
+description: 'To be used as a deployment gate'
 inputs:
   Token:
     description: 'GitHub API Token'
