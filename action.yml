@@ -7,7 +7,19 @@ inputs:
   Header: 
     description: 'Header to be added along with the request'
     required: true
-  RequestBody: 
+  ProjectName: 
+    description: 'Request Body for the api call'
+    required: true
+  IsEnabled: 
+    description: 'Request Body for the api call'
+    required: true
+  ReleaseName: 
+    description: 'Request Body for the api call'
+    required: true
+  StageOwner: 
+    description: 'Request Body for the api call'
+    required: true
+  StageName: 
     description: 'Request Body for the api call'
     required: true
   ExpectedOutput:
@@ -20,5 +32,5 @@ runs:
   using: "composite"
   steps: 
     - run: |
-       ${{ github.action_path }}/apicalltest.ps1 -token ${{inputs.Token}} -Header ${{ inputs.Header }} -RequestBody ${{ inputs.RequestBody }} -ExpectedOutput ${{ inputs.ExpectedOutput }}
+       ${{ github.action_path }}/apicalltest.ps1 -token ${{inputs.Token}} -Header ${{ inputs.Header }} -projectname ${{ inputs.ProjectName}} -isenabled {{inputs.Isenabled}} -ReleaseName ${{inputs.ReleaseName}} -StageOwnerEmail ${{inputs.StageOwner}} -StageName ${{inputs.StageName}} -ExpectedOutput ${{ inputs.ExpectedOutput }}
       shell: pwsh
